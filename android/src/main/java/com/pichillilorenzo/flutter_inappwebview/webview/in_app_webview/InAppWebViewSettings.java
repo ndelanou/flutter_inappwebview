@@ -326,7 +326,6 @@ public class InAppWebViewSettings implements ISettings<InAppWebViewInterface> {
         case "thirdPartyCookiesEnabled":
           thirdPartyCookiesEnabled = (Boolean) value;
           break;
-          break;
         case "acceptFileSchemeCookies":
           acceptFileSchemeCookies = (Boolean) value;
           break;
