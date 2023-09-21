@@ -311,6 +311,8 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
       CookieManager.getInstance().setAcceptThirdPartyCookies(this, customSettings.thirdPartyCookiesEnabled);
 
+    CookieManager.setAcceptThirdPartyCookies(customSettings.acceptFileSchemeCookies);
+
     settings.setLoadWithOverviewMode(customSettings.loadWithOverviewMode);
     settings.setUseWideViewPort(customSettings.useWideViewPort);
     settings.setSupportZoom(customSettings.supportZoom);
@@ -832,6 +834,9 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
 
     if (newSettingsMap.get("thirdPartyCookiesEnabled") != null && customSettings.thirdPartyCookiesEnabled != newCustomSettings.thirdPartyCookiesEnabled && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
       CookieManager.getInstance().setAcceptThirdPartyCookies(this, newCustomSettings.thirdPartyCookiesEnabled);
+
+    if (newSettingsMap.get("acceptFileSchemeCookies") != null && customSettings.acceptFileSchemeCookies != newCustomSettings.acceptFileSchemeCookies)
+      CookieManager.setAcceptThirdPartyCookies(newCustomSettings.acceptFileSchemeCookies);
 
     if (newSettingsMap.get("useWideViewPort") != null && customSettings.useWideViewPort != newCustomSettings.useWideViewPort)
       settings.setUseWideViewPort(newCustomSettings.useWideViewPort);

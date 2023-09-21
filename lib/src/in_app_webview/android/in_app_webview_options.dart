@@ -154,6 +154,10 @@ class AndroidInAppWebViewOptions
   ///**NOTE**: available on Android 21+.
   bool thirdPartyCookiesEnabled;
 
+  ///Boolean value to enable file scheme cookies in the WebView.
+  ///The default value is `true`.
+  bool acceptFileSchemeCookies;
+
   ///Boolean value to enable Hardware Acceleration in the WebView.
   ///The default value is `true`.
   bool hardwareAcceleration;
@@ -273,6 +277,7 @@ class AndroidInAppWebViewOptions
     this.standardFontFamily = "sans-serif",
     this.saveFormData = true,
     this.thirdPartyCookiesEnabled = true,
+    this.acceptFileSchemeCookies = false,
     this.hardwareAcceleration = true,
     this.initialScale = 0,
     this.supportMultipleWindows = false,
@@ -336,6 +341,7 @@ class AndroidInAppWebViewOptions
       "standardFontFamily": standardFontFamily,
       "saveFormData": saveFormData,
       "thirdPartyCookiesEnabled": thirdPartyCookiesEnabled,
+      "acceptFileSchemeCookies": acceptFileSchemeCookies,
       "hardwareAcceleration": hardwareAcceleration,
       "supportMultipleWindows": supportMultipleWindows,
       "useHybridComposition": useHybridComposition,
@@ -400,6 +406,7 @@ class AndroidInAppWebViewOptions
     instance.standardFontFamily = map["standardFontFamily"];
     instance.saveFormData = map["saveFormData"];
     instance.thirdPartyCookiesEnabled = map["thirdPartyCookiesEnabled"];
+    instance.acceptFileSchemeCookies = map["acceptFileSchemeCookies"];
     instance.hardwareAcceleration = map["hardwareAcceleration"];
     instance.supportMultipleWindows = map["supportMultipleWindows"];
     instance.regexToCancelSubFramesLoading =

@@ -735,6 +735,16 @@ because there isn't any way to make the website data store non-persistent for th
   ])
   bool? thirdPartyCookiesEnabled;
 
+  ///Boolean value to enable file scheme cookies in the WebView.
+  ///The default value is `true`.
+  @SupportedPlatforms(platforms: [
+    AndroidPlatform(
+        apiName: "CookieManager.setAcceptFileSchemeCookies",
+        apiUrl:
+            "https://developer.android.com/reference/android/webkit/CookieManager#setAcceptFileSchemeCookies(boolean)")
+  ])
+  bool? acceptFileSchemeCookies;
+
   ///Boolean value to enable Hardware Acceleration in the WebView.
   ///The default value is `true`.
   @SupportedPlatforms(platforms: [
@@ -1668,6 +1678,7 @@ as it can cause framerate drops on animations in Android 9 and lower (see [Hybri
     this.standardFontFamily = "sans-serif",
     this.saveFormData = true,
     this.thirdPartyCookiesEnabled = true,
+    this.acceptFileSchemeCookies = false,
     this.hardwareAcceleration = true,
     this.initialScale = 0,
     this.supportMultipleWindows = false,

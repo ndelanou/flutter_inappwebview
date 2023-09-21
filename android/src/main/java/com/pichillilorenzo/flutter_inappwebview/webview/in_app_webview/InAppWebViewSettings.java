@@ -92,6 +92,7 @@ public class InAppWebViewSettings implements ISettings<InAppWebViewInterface> {
   public String standardFontFamily = "sans-serif";
   public Boolean saveFormData = true;
   public Boolean thirdPartyCookiesEnabled = true;
+  public Boolean acceptFileSchemeCookies = false;
   public Boolean hardwareAcceleration = true;
   public Boolean supportMultipleWindows = false;
   public String regexToCancelSubFramesLoading;
@@ -325,6 +326,10 @@ public class InAppWebViewSettings implements ISettings<InAppWebViewInterface> {
         case "thirdPartyCookiesEnabled":
           thirdPartyCookiesEnabled = (Boolean) value;
           break;
+          break;
+        case "acceptFileSchemeCookies":
+          acceptFileSchemeCookies = (Boolean) value;
+          break;
         case "hardwareAcceleration":
           hardwareAcceleration = (Boolean) value;
           break;
@@ -473,6 +478,7 @@ public class InAppWebViewSettings implements ISettings<InAppWebViewInterface> {
     settings.put("standardFontFamily", standardFontFamily);
     settings.put("saveFormData", saveFormData);
     settings.put("thirdPartyCookiesEnabled", thirdPartyCookiesEnabled);
+    settings.put("acceptFileSchemeCookies", acceptFileSchemeCookies);
     settings.put("hardwareAcceleration", hardwareAcceleration);
     settings.put("supportMultipleWindows", supportMultipleWindows);
     settings.put("regexToCancelSubFramesLoading", regexToCancelSubFramesLoading);
